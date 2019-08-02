@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+    head
+        title Steven Fernandez (S3PO)
+        //Include boot strap font awesome etc.
+        link(rel='stylesheet', style='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css')
+        //Link in our stylesheets... And stuff for fontawesome
+        link(rel='stylesheet', type='text/css', href='stylesheets/style.css')
+        link(rel='stylesheet', href="https://use.fontawesome.com/releases/v5.9.0/css/all.css", integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E", crossorigin='anonymous') 
+        //Include stuff for semantic ui etc.
+        script(src="https://code.jquery.com/jquery-3.1.1.min.js", crossorigin='anonymous') 
+        link(rel='stylesheet', href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css")
+        script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js")
+
+    body
+
+        div.ui.container
+            div.ui.secondary.menu
+
+                //Ideally home would be the new crumb cafe logo
+                a(class='item' href='/')
+                    | Home 
+                a(class='item' href='/order')
+                    | About 
+                a(class='item' href='/about')
+                    | Posts
+
+        //Block content can be replaced by children that extend layout...
+        div.ui.container
+            block content
+
+        //Footer
+        div.ui.center.aligned.container
+            img.ui.centered.mini.image
+            div.ui.inverted.section.divider
+            div.ui.horizontal.small.divided.link.list
+                a(class='item' href='#')
+                    | Home 
+                a(class='item' href='#')
+                    | Order
+                a(class='item' href='#')
+                    | About
