@@ -2,7 +2,7 @@ const express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res, next) => {
-    res.render('order', {title: 'Crumb Cafe Delivery!'});
+    res.render('post', {title: 'sthreepop'});
 });
 
 module.exports = router;

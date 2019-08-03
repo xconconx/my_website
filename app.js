@@ -1,5 +1,4 @@
 require('dotenv').config();
-process.setMaxListeners(0);
 
 const createError = require('http-errors'),
     express = require('express'),
@@ -11,18 +10,15 @@ const createError = require('http-errors'),
     mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index'),
-    usersRouter = require('./routes/users');
-    postsRouter = require('./routes/posts');
+    postsRouter = require('./routes/posts'),
+    whoamiRouter = require('./routes/whoami');
 
 //Start express
 const app = express();
-require('./middleware/passport')(passport);
-app.use(passport.initialize());
-app.use(passport.session());
 
 //Configure express session
 app.use(session({
-  session: process.env.SESSION_SECRET,
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -52,8 +48,8 @@ mongoose.set("useCreateIndex", true);
 
 /* App should take us to home */ 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
+app.use('/whoami', whoamiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
