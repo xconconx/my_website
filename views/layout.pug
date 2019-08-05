@@ -4,8 +4,14 @@ html(lang='en')
         title sthreepop
         //Include boot strap font awesome etc.
         link(rel='stylesheet', style='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css')
+        
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
         //Link in our stylesheets... And stuff for fontawesome
-        link(rel='stylesheet', type='text/css', href='stylesheets/style.css')
+        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+
+        //google fonts
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:900|Ubuntu:700&display=swap')
+
         link(rel='stylesheet', href="https://use.fontawesome.com/releases/v5.9.0/css/all.css", integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E", crossorigin='anonymous') 
         //Include stuff for semantic ui etc.
         script(src="https://code.jquery.com/jquery-3.1.1.min.js", crossorigin='anonymous') 
@@ -14,29 +20,4 @@ html(lang='en')
 
     body
 
-        div.ui.container
-            div.ui.secondary.menu
-
-                //Ideally home would be the new crumb cafe logo
-                a(class='item' href='/')
-                    | home 
-                a(class='item' href='/whoami')
-                    | whoami 
-                a(class='item' href='/posts')
-                    | posts 
-
-        //Block content can be replaced by children that extend layout...
-        div.ui.container
-            block content
-
-        //Footer
-        div.ui.center.aligned.container
-            img.ui.centered.mini.image
-            div.ui.inverted.section.divider
-            div.ui.horizontal.small.divided.link.list
-                a(class='item' href='#')
-                    | Home 
-                a(class='item' href='#')
-                    | Order
-                a(class='item' href='#')
-                    | About
+      block content
