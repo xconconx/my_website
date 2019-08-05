@@ -3,18 +3,38 @@ html {
 }
 
 body { 
-    min-height: 100vh;
+    min-height: 100%;
+    
+    /*Still need to set the background */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.jumbotron { height: 100vh; margin-bottom: 0; }
 
 .jumbotron > div:nth-child(1) {
-  font-family: 'Roboto', sans-serif;
-  padding-bottom: 100vh;
+  font-family: 'Ubuntu', sans-serif !important;
   text-align: center;
-  justify-content: center;
+  padding-top: 15%;
+  margin-bottom: 10px;
+}
+.jumbotron > div:nth-child(2) {
+  text-align: center;
   margin: 0 auto;
 }
-
-a {
-  color: #00B7FF;
+.jumbotron > div:nth-child(2) > button {
+  margin-right: 10%;
 }
+
+h1.display-4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
+}
+
+
+h2.display-4 {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 3rem;
+}
+
 
